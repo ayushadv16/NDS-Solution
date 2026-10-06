@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>NDS • Sovereign City</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <div class="logo">NDS</div>
+        <div>
+          <div class="eyebrow">TEAM TECH TITANS</div>
+          <h1>Sovereign City</h1>
+          <small>A sovereign nation. Built on trust.</small>
+        </div>
+      </div>
+      <div class="headbuttons">
+        <span class="tag">EXPLORABLE ARCHITECTURE</span
+        ><button id="present">Presentation view ↗</button>
+      </div>
+    </header>
+    <div class="intro">
+      <div>
+        <div class="eyebrow">THE SOVEREIGN CITY EXPERIENCE</div>
+        <h2 id="title"></h2>
+        <p id="description"></p>
+      </div>
+    </div>
+    <nav class="tabs" id="scenarios" aria-label="Select a scenario"></nav>
+    <div class="workspace">
+      <main class="scene">
+        <div class="scene-top">
+          <b
+            >AIR-GAPPED SOVEREIGN CAMPUS
+            <span class="edition">NIGHT EDITION</span></b
+          ><span>Azure Local foundation · No direct internet</span>
+        </div>
+        <div class="viewtools">
+          <button id="labels">Hide labels</button
+          ><button id="zoomout" aria-label="Zoom out">−</button
+          ><button id="zoomin" aria-label="Zoom in">+</button
+          ><button id="home" aria-label="Reset view">⌂</button>
+        </div>
+        <svg
+          id="city"
+          viewBox="0 0 1120 690"
+          role="img"
+          aria-label="Interactive brick-built sovereign cloud campus. Select a building to learn its role."
+        >
+          <defs>
+            <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+              <feGaussianBlur stdDeviation="3" result="b" />
+              <feMerge>
+                <feMergeNode in="b" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter
+              id="activeglow"
+              x="-30%"
+              y="-30%"
+              width="160%"
+              height="170%"
+            >
+              <feDropShadow
+                dx="0"
+                dy="0"
+                stdDeviation="6"
+                flood-color="#8fffe0"
+                flood-opacity=".5"
+              />
+              <feDropShadow
+                dx="0"
+                dy="14"
+                stdDeviation="9"
+                flood-opacity=".5"
+              />
+            </filter>
+            <linearGradient id="land" x2="0.8" y2="1">
+              <stop stop-color="#466278" />
+              <stop offset="1" stop-color="#253c51" />
+            </linearGradient>
+            <linearGradient id="edge" x2="0" y2="1">
+              <stop stop-color="#24394e" />
+              <stop offset="1" stop-color="#112235" />
+            </linearGradient>
+            <pattern
+              id="grid"
+              width="35"
+              height="20"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M0 20L35 0M0 0L35 20"
+                stroke="#aec8d6"
+                stroke-width=".4"
+                opacity=".35"
+              />
+            </pattern>
+            <filter id="shadow">
+              <feDropShadow
+                dx="0"
+                dy="10"
+                stdDeviation="9"
+                flood-color="#000814"
+                flood-opacity=".5"
+              />
+            </filter>
+          </defs>
+          <g id="world">
+            <path d="M45 310L552 63L980 282L470 599Z" fill="url(#land)" />
+            <path
+              d="M45 310V331L470 621L980 305V282L470 599Z"
+              fill="url(#edge)"
+            />
+            <path d="M45 310L552 63L980 282L470 599Z" fill="url(#grid)" />
+            <path
+              d="M82 307L551 84L938 282L470 575Z"
+              fill="#304a5d"
+              stroke="#7cd9ce"
+              stroke-width="2"
+              stroke-dasharray="7 5"
+            />
+            <path
+              d="M90 342L495 140M260 452L703 233M454 555L876 335M190 256L655 500M401 153L866 393"
+              fill="none"
+              stroke="#203447"
+              stroke-width="26"
+            />
+            <path
+              d="M90 342L495 140M260 452L703 233M454 555L876 335M190 256L655 500M401 153L866 393"
+              fill="none"
+              stroke="#628297"
+              stroke-width="1.5"
+              stroke-dasharray="8 10"
+            />
+            <g id="landscape"></g>
+            <g id="details"></g>
+            <path
+              d="M833 482L988 397L1102 461L950 551Z"
+              fill="#3a495f"
+              stroke="#9b91c4"
+            />
+            <path
+              d="M833 482V497L950 568L1102 477V461L950 551Z"
+              fill="#243247"
+            />
+            <text x="968" y="590" text-anchor="middle" class="subLabel">
+              SEPARATE RECOVERY ENVIRONMENT
+            </text>
+            <g id="routes"></g>
+            <g id="buildings"></g>
+            <g id="packets"></g>
+            <text x="385" y="635" class="subLabel">
+              SOVEREIGN BOUNDARY · GOVERNED OPERATIONS
+            </text>
+          </g>
+        </svg>
+        <div class="legend">
+          <span><i style="background: #409dc2"></i>Core services</span
+          ><span><i style="background: #a58bd8"></i>AI & governance</span
+          ><span><i style="background: #e7b354"></i>Recovery</span
+          ><span>Click a building to explore</span>
+        </div>
+      </main>
+      <aside class="inspector">
+        <div class="eyebrow">INSIDE THE BUILDING</div>
+        <div class="inspect-number" id="number"></div>
+        <h3 id="component"></h3>
+        <section>
+          <label>WHAT HAPPENS HERE</label>
+          <p id="role"></p>
+        </section>
+        <section>
+          <label>BUILT-IN CONTROL</label>
+          <p id="control"></p>
+        </section>
+        <section>
+          <label>WHY IT MATTERS</label>
+          <p id="value"></p>
+        </section>
+        <div class="pill">Conceptual model · No live government data</div>
+      </aside>
+    </div>
+    <section class="playbar">
+      <div class="playbuttons">
+        <button class="primary" id="play">▶ Start journey</button
+        ><button id="next" aria-label="Next step">Next →</button
+        ><button id="reset" aria-label="Reset scenario">↺</button>
+      </div>
+      <div class="playtext" aria-live="polite">
+        <div class="eyebrow" id="count"></div>
+        <p id="stepcopy"></p>
+        <div class="progress"><div id="bar"></div></div>
+      </div>
+    </section>
+    <p class="outcome" id="outcome"></p>
+    <footer>
+      <span>NDS SOVEREIGN CLOUD / AZURE LOCAL / TOGAF GOVERNANCE</span
+      ><span
+        >Illustrative process routes, not physical network links · Space to play
+        · → to advance</span
+      >
+    </footer>
+    <script src="js/data.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </body>
+</html>
